@@ -44,8 +44,7 @@ header {
 }
 
 #List .panel-body:hover {
-	background-color: #337ab7;
-	color: #FFFFFF;
+	background-color: #e3e3e3;
 	cursor: pointer;
 }
 
@@ -115,6 +114,25 @@ main {
 
 #Lobby {
 	padding-top: 10px;
+}
+
+#ChatBox {
+	width:auto;
+	height:130px;
+	max-height:130px;
+	overflow:auto;
+}
+
+.hidden-sm.hidden-xs.text-center {
+	border:1px solid grey;
+}
+
+#TabContent .panel-body {
+	border-bottom:1px solid lightgrey;
+}
+
+#Chat form {
+	margin:3px 5px;
 }
 
 @media screen and (max-width: 576px) {
