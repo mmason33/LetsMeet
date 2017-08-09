@@ -108,6 +108,15 @@ main {
 	font-size: 16px;
 }
 
+.glyphicon-ok {
+	font-size:12px;
+	color:green;
+}
+
+#Lobby {
+	padding-top: 10px;
+}
+
 @media screen and (max-width: 576px) {
 	#StartUp {
 		padding-top: 30px;
