@@ -2,86 +2,77 @@
 <html>
 	<head>
 		<title>App</title>
-
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<!-- Latest compiled and minified CSS -->
 		<link href="https://fonts.googleapis.com/css?family=Reem+Kufi" rel="stylesheet">
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 		<!-- Optional theme -->
 		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
-
 		<link rel="stylesheet" href="assets/css/style.css">
-		<link rel="stylesheet" href="assets/css/maps.css">
-		<script src="https://use.fontawesome.com/bc19a41229.js"></script>	
-
+		<script src="https://use.fontawesome.com/bc19a41229.js"></script>
 	</head>
 <body>
-	<section id="Page">
-		<div class="container" id="StartUp">
-		  <div class="col-sm-3"></div>
-		  <div class="col-sm-6">
-		    <div class="jumbotron text-center">
-		      <div class="row">
-		        <h2><b>Welcome to LetsMeet!</b></h2>
-		      </div>
-		      <div class="row">
-		        <div class="form-group">
-		            <label for="NewMeet"><h4>Create a new meet for others to join</h4></label>                           
-		            <input class="form-control" id="NewMeet" type="text" placeholder="Please enter a name for your chatroom">
-		        </div>
-		        <div class="form-group">
-		            <input type="number" min="1" name="NumberOfUsers" id="NumberOfUsers" class="form-control" placeholder="Number Of Users">         
-		        </div>
-		         <button class="btn btn-success" id="SubmitNewMeetUp" type="submit">Create a new meet</button>   
-		        <h4>Or</h4>
-		        <div class="form-group">
-		            <label for="ExistingMeetUp"><h4>Enter the 10 character sitekey for an existing meet up</h4></label>
-		            <input type="text" class="form-control" id="ExistingMeetUp" placeholder="e.g. upHcpS0PMq">
-		        </div>
-		        <button class="btn btn-primary" id="SubmitExistingMeetUp" tyep="submit">Join an Existing MeetUp</button>      
-		      </div>      
-		    </div>
-		  </div>
-		  <div class="col-sm-3"></div>
-		</div>
-		<div class="container" id = "main-modal">
-		        <div class="modal fade" id = "main-error" tabindex="-1" role="dialog">
-		          <div class="modal-dialog" role="document">
-		            <div class="modal-content">
-		              <div class="modal-header">
-		                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-		                <h4 class="modal-title">Error</h4>
-		              </div>
-		              <div class="modal-body">
-		                <p id = "modal-msg">You did not enter 10 characters. Please try again.</p>
-		              </div>
-		              <div class="modal-footer">
-		                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-		              </div>
-		            </div><!-- /.modal-content -->
-		          </div><!-- /.modal-dialog -->
-		        </div><!-- /.modal -->
-		    </div>
-		<header id="Header" class="container hide">
-
-		</header>
-
-
-		<section id="Title">
-			<div class="container jumbotron hide">
+<section id="Page">
+	<div class="container" id="StartUp">
+		<div class="col-sm-3"></div>
+		<div class="col-sm-6">
+			<div class="jumbotron text-center">
+				<h2><strong>Welcome to LetsMeet!</strong></h2>
 				<div class="row">
-					<div class="col-sm-2"></div>
-					<div class="col-sm-8 text-center">
-						<h1 class="text-center">Let's Meet: <span id="ChatTitle"></span></h1>
-						<hr>
-						<div id="sitekey"></div>
+					<div class="form-group">
+						<label for="NewMeet"><h4>Create a new meet for others to join</h4></label>
+						<input class="form-control" id="NewMeet" type="text" placeholder="Please enter a name for your chatroom">
 					</div>
-					<div class="col-sm-2"></div>
+					<div class="form-group">
+						<input type="number" min="1" name="NumberOfUsers" id="NumberOfUsers" class="form-control" placeholder="Number Of Users">
+					</div>
+					<button class="btn btn-success" id="SubmitNewMeetUp" type="submit">Create a new meet</button>
+					<h4>Or</h4>
+					<div class="form-group">
+						<label for="ExistingMeetUp"><h4>Enter the 10 character sitekey for an existing meet up</h4></label>
+						<input type="text" class="form-control" id="ExistingMeetUp" placeholder="e.g. upHcpS0PMq">
+					</div>
+					<button class="btn btn-primary" id="SubmitExistingMeetUp" tyep="submit">Join an Existing MeetUp</button>
 				</div>
 			</div>
-		</section>
-
-
+		</div>
+		<div class="col-sm-3"></div>
+	</div>
+	<!--end StartUp -->
+	<div class="container" id = "main-modal">
+		<div class="modal fade" id = "main-error" tabindex="-1" role="dialog">
+			<div class="modal-dialog" role="document">
+				<div class="modal-content">
+					<div class="modal-header">
+						<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+						<h4 class="modal-title">Error</h4>
+					</div>
+					<div class="modal-body">
+						<p id = "modal-msg">You did not enter 10 characters. Please try again.</p>
+					</div>
+					<div class="modal-footer">
+						<button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end main-modal -->
+	<header id="Header" class="container hide"></header><!-- header is dynamically populated -->
+	<section id="Title">
+		<div class="container jumbotron hide">
+			<div class="row">
+				<div class="col-sm-2"></div>
+				<div class="col-sm-8 text-center">
+					<h1 class="text-center">Let's Meet: <span id="ChatTitle"></span></h1>
+					<hr>
+					<div id="sitekey"></div>
+				</div>
+				<div class="col-sm-2"></div>
+			</div>
+		</div>
+	</section>
+	<!-- end Title -->
 	<main class="container hide">
 		<div id="PillsNavigation" class="row">
 			<ul class="nav nav-tabs col-xs-12"  role="tablist">
@@ -89,68 +80,64 @@
 				<li role="presentation" id="ChatTab"><a href="#Chat" aria-controls="Chat" role="tab" data-toggle="tab">Chat</a></li>
 			</ul>
 		</div>
+		<!-- end PillsNavigation -->
 		<section id="TabContent" class="row">
 			<div class="col-xs-12">
 				<div class="tab-content">
-					<div role="tabpanel" class="tab-pane fade in active" id="Search">
-					</div>
+					<div role="tabpanel" class="tab-pane fade in active" id="Search"></div><!-- Search is dynamically populated -->
 					<div role="tabpanel" class="tab-pane fade" id="Chat">
-			    		<div class="row">
-			    			<div class="col-xs-12">
-			    				<div class="panel panel-default">
-			    					<div class="panel-heading">
-			    						<h4 id="ChatTitle">Chatroom</h4>
-			    					</div>
-			    					<div class="panel-body" style="border-bottom:1px solid lightgrey">
-			    						<div class="col-sm-10">
-			    							<div id="ChatBox" style="width:auto;height:130px;max-height:130px;overflow:auto">
-			    							</div>			    						
-			    						</div>
-			    						<div class="col-sm-2 hidden-sm hidden-xs" style="border:1px solid grey;text-align:center">
-			    							<div class="row">
-			    								<b>Active Users</b>
-			    							</div>
-			    							<hr>
-			    							<div class="row" id="UserList"></div>
-			    						</div>
-			    					</div>
-			    					<form style="margin:3px 5px">
-          							<div class="form-group">
-                							<label for="Message">Message: </label>
-          								<div class="input-group">	                							
-	                						<input class="form-control" id="Message" type="text" placeholder="Message">
-	                						<span class="input-group-btn">
-	                							<button class="btn btn-success" id="SubmitMessage" type="submit"><span class="glyphicon glyphicon-send"></span></button>	
-	                						</span> 
-          								</div>    
-          							</div>
-	        						</form>			    					
-			    				</div>
-			    			</div>
-			    		</div>
+						<div class="row">
+							<div class="col-xs-12">
+								<div class="panel panel-default">
+									<div class="panel-heading">
+										<h4 id="ChatTitle">Chatroom</h4>
+									</div>
+									<div class="panel-body" style="border-bottom:1px solid lightgrey">
+										<div class="col-sm-10">
+											<div id="ChatBox" style="width:auto;height:130px;max-height:130px;overflow:auto"></div>
+										</div>
+										<div class="col-sm-2 hidden-sm hidden-xs" style="border:1px solid grey;text-align:center">
+											<b>Active Users</b>
+											<hr>
+											<div id="UserList"></div>
+										</div>
+									</div>
+									<form style="margin:3px 5px">
+										<div class="form-group">
+											<label for="Message">Message: </label>
+											<div class="input-group">
+												<input class="form-control" id="Message" type="text" placeholder="Message">
+												<span class="input-group-btn">
+													<button class="btn btn-success" id="SubmitMessage" type="submit"><span class="glyphicon glyphicon-send"></span></button>
+												</span>
+											</div>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
 					</div>
 				</div>
 			</div>
 		</section>
-		<div id="Place"></div>
+		<!--end TabContent -->
+		<div id="Place"></div><!-- Place is dynamically populated -->
 	</main>
-
-		<!-- google places api -->
-		<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFZ1CZ31OuUgv7cCm9JBsw96kpa_zgaoE&libraries=places"></script>
-		<!-- jQuery -->
-		<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-		<!-- Bootstrap js -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!--Firebase -->
-		<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
-		<!-- Moment.js -->
-		<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
-		<!-- Bootstarp.js (For Tabs) -->
-		<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
-		<!-- functions.js -->
-		<script src="assets/js/functions.js"></script>
-		<!-- maps.js -->
-		<script type="text/javascript" src="assets/js/maps.js"></script>
-	</section>
+	<!-- google places api -->
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCFZ1CZ31OuUgv7cCm9JBsw96kpa_zgaoE&libraries=places"></script>
+	<!-- jQuery -->
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+	<!-- Bootstrap js -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!--Firebase -->
+	<script src="https://www.gstatic.com/firebasejs/4.2.0/firebase.js"></script>
+	<!-- Moment.js -->
+	<script src="https://cdn.jsdelivr.net/momentjs/2.12.0/moment.min.js"></script>
+	<!-- Bootstarp.js (For Tabs) -->
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+	<!-- functions.js -->
+	<script src="assets/js/functions.js"></script>
+</section>
+<!-- end Page-->
 </body>
 </html>
