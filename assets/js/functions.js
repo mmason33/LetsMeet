@@ -6,12 +6,12 @@ var active_suggestion = false;
 
 // Initialize Firebase
 var config = {
-  apiKey: "AIzaSyDkKzJvL4pPVhuJuSHJRZyBA11FbeFJz_8",
-  authDomain: "meetup-8339a.firebaseapp.com",
-  databaseURL: "https://meetup-8339a.firebaseio.com",
-  projectId: "meetup-8339a",
-  storageBucket: "meetup-8339a.appspot.com",
-  messagingSenderId: "292796186459"
+  apiKey: "AIzaSyC6B82IlusPIV2rMJA79A9z6uAvSr-SVEE",
+  authDomain: "friendlychat-56d31.firebaseapp.com",
+  databaseURL: "https://friendlychat-56d31.firebaseio.com",
+  projectId: "friendlychat-56d31",
+  storageBucket: "friendlychat-56d31.appspot.com",
+  messagingSenderId: "379256444845"
 };
 firebase.initializeApp(config);
 
@@ -106,16 +106,20 @@ $(document).ready(function() {
     var name = $("#NewMeet").val().trim();
     var numberOfUsers = $('#NumberOfUsers').val();
     limit = parseInt(numberOfUsers);
-    sitekey = keyGen();
-    if ( name !== '' && numberOfUsers !== '') {
-      database.ref(sitekey + '/chat').set({
-        NumberOfUsers: numberOfUsers,
-        LatestName: "",
-        LatestMessage: "",
-        Chatname: name
-      });
+    if (limit > 0){
+      sitekey = keyGen();
+      if ( name !== '' && numberOfUsers !== '') {
+        database.ref(sitekey + '/chat').set({
+          NumberOfUsers: numberOfUsers,
+          LatestName: "",
+          LatestMessage: "",
+          Chatname: name
+        });
 
-      createSecondForm();
+        createSecondForm();
+      }
+    }else{
+      showModal("Number of Users must be greater than 0.");
     }
 
     $('#SubmitLocation').click(function(e) {
@@ -323,6 +327,17 @@ function createSecondForm() {
     '<div class="col-md-3"></div>' +
     '</div>'
   );
+  var defaultBounds = new google.maps.LatLngBounds(
+  new google.maps.LatLng(-33.8902, 151.1759),
+  new google.maps.LatLng(-33.8474, 151.2631));
+
+  var input = document.getElementById('Location');
+  var options = {
+    bounds: defaultBounds,
+    types: ['address']
+  };
+  autocomplete = new google.maps.places.Autocomplete(input, options);
+
 }
 
 function locationFormHandler() {
